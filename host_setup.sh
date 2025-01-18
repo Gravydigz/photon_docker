@@ -16,17 +16,17 @@ fi
 case $node in
   1)
     hostname=docker$node
-    ip_addr=10.0.151.$node
+    ip_addr=10.0.151.10$node
     gateway=10.0.151.254
     ;;
   2)
     hostname=docker$node
-    ip_addr=10.0.151.$node
+    ip_addr=10.0.151.10$node
     gateway=10.0.151.254
     ;;
   3)
     hostname=docker$node
-    ip_addr=10.0.151.$node
+    ip_addr=10.0.151.10$node
     gateway=10.0.151.254
     ;;
   *)
