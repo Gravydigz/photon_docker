@@ -11,5 +11,9 @@ host_setup.sh:
 swarm_setup.sh:
 - Creates docker swarm and adds nodes
 
+keepalived_setup.sh
+- Installs and configures keepalived on nodes
+- Starts keepalived and enables start on boot
+
 portainer_setup.sh:
 - Installs portainer service on docker swarm
