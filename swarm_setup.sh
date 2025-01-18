@@ -132,3 +132,9 @@ workerToken=`cat worker`
 #EOF
 #  echo -e " \033[32;5m$newnode - GlusterFS mounted on reboot\033[0m"
 #done
+
+docker node ls
+docker service ls
+exit
+EOF
+#echo -e " \033[32;5mDocker Swarm created\033[0m"
