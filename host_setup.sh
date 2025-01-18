@@ -1,5 +1,9 @@
 # "Go here for info https://vmware.github.io/photon/docs-v5/administration-guid"
 
+# Force ntp update
+timedatectl set-ntp off
+timedatectl set-ntp on
+
 # Deal with boot issues
 #"echo \"blacklist floppy\" | tee /etc/modprobe.d/blacklist-floppy.conf"
 #"rmmod floppy"
