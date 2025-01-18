@@ -9,32 +9,32 @@ auth_pass=AllYourBase64#
 node = $(cat /etc/hostname)
 case $node in
   docker1)
-    peer1=10.0.151.2
-    peer2=10.0.151.3
+    peer1=10.0.151.102
+    peer2=10.0.151.103
     gateway=10.0.151.254
     router_id=master
     state=MASTER
     priority=100
     ;;
   docker2)
-    peer1=10.0.151.1
-    peer2=10.0.151.3
+    peer1=10.0.151.101
+    peer2=10.0.151.103
     gateway=10.0.151.254
     router_id=backup1
     state=BACKUP
     priority=80
     ;;
   docker3)
-    peer1=10.0.151.1
-    peer2=10.0.151.2
+    peer1=10.0.151.101
+    peer2=10.0.151.102
     gateway=10.0.151.254
     router_id=backup2
     state=BACKUP
     priority=60
     ;;
   *)
-    peer1=10.0.151.2
-    peer2=10.0.151.3
+    peer1=10.0.151.101
+    peer2=10.0.151.102
     gateway=10.0.151.254
     state=BACKUP
     priority=0
