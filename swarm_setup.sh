@@ -1,5 +1,9 @@
 # Setup docker swarm
 
+# Set static variables
+user=linuxadmin
+certName=id_rsa #ssh certificate name variable
+
 # Set the IP addresses of the admin, managers, and workers nodes
 admin=192.168.3.5
 manager1=192.168.3.21
@@ -11,9 +15,6 @@ worker2=192.168.3.25
 # Set the workers' hostnames (if using cloud-init in Proxmox it's the name of the VM)
 workerHostname1=dockerSwarm-04
 workerHostname2=dockerSwarm-05
-
-# User of remote machines
-user=ubuntu
 
 # Interface used on remotes
 interface=eth0
@@ -30,8 +31,8 @@ workers=($worker1 $worker2)
 # Array of all
 all=($manager1 $worker1 $worker2)
 
-#ssh certificate name variable
-certName=id_rsa
+
+
 
 #############################################
 #            DO NOT EDIT BELOW              #
