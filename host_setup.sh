@@ -98,7 +98,7 @@ iptables --list
 iptables -A INPUT -p ICMP -j ACCEPT
 iptables -A OUTPUT -p ICMP -j ACCEPT
 iptables-save > /etc/systemd/scritps/ip4save
-echo "iptables updated
+echo "iptables updated"
 
 # Create new user
 useradd -m -G sudo,docker $user
