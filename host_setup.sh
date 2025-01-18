@@ -12,11 +12,7 @@ else
   exit 1
 fi
 
-# Set variables for the script
-# variable 1 is hostname
-# variable 2 is ip_addr
-# variable 3 is gateway
-
+# Set dynamic variables
 case $node in
   1)
     hostname=docker$node
