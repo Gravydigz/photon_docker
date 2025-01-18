@@ -18,15 +18,17 @@ tdnf update -y
 
 # Configure Network
 echo "docker1" > /etc/hostname
-touch /etc/systemd/network/10-static-en.network
-echo "[Match]" >> /etc/systemd/network/10-static-en.network
-echo " " >> /etc/systemd/network/10-static-en.network
-echo "[Network]" >> /etc/systemd/network/10-static-en.network
-echo "Address=10.0.151.101/24" >> /etc/systemd/network/10-static-en.network
-echo "Gateway=10.0.151.254" >> /etc/systemd/network/10-static-en.network
-echo "Domains=gravydigz.lan" >> /etc/systemd/network/10-static-en.network
-echo "DNS=10.0.151.1" >> /etc/systemd/network/10-static-en.network
-echo "DNS=10.0.151.2" >> /etc/systemd/network/10-static-en.network
+cat > /etc/systemd/network/10-static-en.network << EOF
+[Match]
+
+[Network]
+Address=10.0.151.101/24
+Gateway=10.0.151.254
+Domains=gravydigz.lan
+DNS=10.0.151.1
+DNS=10.0.151.2
+EOF
+
 chmod 644 /etc/systemd/network/10-static-en.network
 chown systemd-network:systemd-network /etc/systemd/network/10-static-en.network
 systemctl restart systemd-networkd
