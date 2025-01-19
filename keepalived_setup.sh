@@ -6,7 +6,7 @@ virtual_ip=10.0.151.100/24
 auth_pass=@11Yourl3ase64#
 
 # Set dynamic variables
-node = $(cat /etc/hostname)
+node=$(cat /etc/hostname)
 case $node in
   docker1)
     peer1=10.0.151.102
@@ -61,7 +61,7 @@ global_defs {
     router_id $router_id # naming this node
 }
 
-vrrp_instance VI_1 {
+vrrp_instance VI_docker {
     state $state
     interface eth0
     virtual_router_id 50
