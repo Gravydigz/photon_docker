@@ -16,22 +16,22 @@ fi
 case $node in
   1)
     hostname=docker$node
-    ip_addr=10.0.151.10$node
+    ip_addr=10.0.151.10$node/24
     gateway=10.0.151.254
     ;;
   2)
     hostname=docker$node
-    ip_addr=10.0.151.10$node
+    ip_addr=10.0.151.10$node/24
     gateway=10.0.151.254
     ;;
   3)
     hostname=docker$node
-    ip_addr=10.0.151.10$node
+    ip_addr=10.0.151.10$node/24
     gateway=10.0.151.254
     ;;
   *)
     hostname=dockerX
-    ip_addr=10.0.151.199
+    ip_addr=10.0.151.199/24
     gateway=10.0.151.254
     ;;
 esac
@@ -102,7 +102,7 @@ echo "iptables updated"
 
 # Create new user
 useradd -m -G sudo,docker $user
-passwd --expire changeme
+echo -e "changeme\nchangeme" | passwd --expire $user
 echo "Users $user added"
 
 # Start docker and enable on boot
