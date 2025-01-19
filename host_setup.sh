@@ -98,6 +98,15 @@ echo "Static IP setup and network restarted"
 iptables --list
 iptables -A INPUT -p ICMP -j ACCEPT
 iptables -A OUTPUT -p ICMP -j ACCEPT
+
+# Enable docker swarm through iptables
+iptables -A INPUT -p tcp --dport 2377 -j ACCEPT  # communication between manager nodes
+iptables -A INPUT -p tcp --dport 7946 -j ACCEPT  # container network discover and node communications
+iptables -A INPUT -p udp --dport 7946 -j ACCEPT  # container network discover and node communications
+iptables -A INPUT -p udp --dport 4789 -j ACCEPT  # overlay network traffic
+iptables -A INPUT -p tcp --dport 2376 -j ACCEPT  # secure Docker client communication
+
+# Save iptable settings for reboot
 iptables-save > /etc/systemd/scritps/ip4save
 echo "iptables updated"
 
