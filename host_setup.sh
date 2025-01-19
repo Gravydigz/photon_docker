@@ -78,6 +78,7 @@ echo "Hostname set to $(cat /etc/hostname)"
 
 cat > /etc/systemd/network/10-static-en.network << EOF
 [Match]
+Name=eth0
 
 [Network]
 Address=$ip_addr
