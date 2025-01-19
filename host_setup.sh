@@ -68,7 +68,7 @@ systemd-machine-id-setup
 echo "Machine ID set to $(cat /etc/machine-id)"
 
 # Install and update system packages
-tdnf install -y nano less
+tdnf install -y nano less sudo
 tdnf update -y
 echo "System packages installed and updated"
 
