@@ -3,7 +3,7 @@
 
 # Set static variables
 virtual_ip=10.0.151.100/24
-auth_pass=AllYourBase64#
+auth_pass=@11Yourl3ase64#
 
 # Set dynamic variables
 node = $(cat /etc/hostname)
