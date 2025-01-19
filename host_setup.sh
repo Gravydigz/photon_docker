@@ -107,7 +107,7 @@ iptables -A INPUT -p udp --dport 4789 -j ACCEPT  # overlay network traffic
 iptables -A INPUT -p tcp --dport 2376 -j ACCEPT  # secure Docker client communication
 
 # Save iptable settings for reboot
-iptables-save > /etc/systemd/scritps/ip4save
+iptables-save > /etc/systemd/scripts/ip4save
 echo "iptables updated"
 
 # Create new user
