@@ -9,32 +9,32 @@ auth_pass=@11Yourl3ase64#
 node=$(cat /etc/hostname)
 case $node in
   docker1)
-    peer1=10.0.151.102
-    peer2=10.0.151.103
+    peer1=10.0.151.102/24
+    peer2=10.0.151.103/24
     gateway=10.0.151.254
     router_id=master
     state=MASTER
     priority=100
     ;;
   docker2)
-    peer1=10.0.151.101
-    peer2=10.0.151.103
+    peer1=10.0.151.101/24
+    peer2=10.0.151.103/24
     gateway=10.0.151.254
     router_id=backup1
     state=BACKUP
     priority=80
     ;;
   docker3)
-    peer1=10.0.151.101
-    peer2=10.0.151.102
+    peer1=10.0.151.101/24
+    peer2=10.0.151.102/24
     gateway=10.0.151.254
     router_id=backup2
     state=BACKUP
     priority=60
     ;;
   *)
-    peer1=10.0.151.101
-    peer2=10.0.151.102
+    peer1=10.0.151.101/24
+    peer2=10.0.151.102/24
     gateway=10.0.151.254
     router_id=unknown
     state=BACKUP
@@ -72,7 +72,7 @@ vrrp_instance VI_docker {
         auth_type PASS
         auth_pass $auth_pass
     }
-    Unicast_peer {
+    unicast_peer {
         $peer1 # list other keepalived peers 
         $peer2
     }
