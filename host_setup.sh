@@ -1,6 +1,6 @@
 # host_setup.sh
 # Script to complete the setup for PhotonOS
-# "Go here for info https://vmware.github.io/photon/docs-v5/administration-guid"
+# "Go here for info https://vmware.github.io/photon/docs-v5/administration-guide"
 
 # Script expects the node number
 node="${1:-999}"
