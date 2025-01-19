@@ -36,6 +36,7 @@ case $node in
     peer1=10.0.151.101
     peer2=10.0.151.102
     gateway=10.0.151.254
+    router_id=unknown
     state=BACKUP
     priority=0
     ;;
