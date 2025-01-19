@@ -99,6 +99,9 @@ iptables --list
 iptables -A INPUT -p ICMP -j ACCEPT
 iptables -A OUTPUT -p ICMP -j ACCEPT
 
+# Enable VRRP traffic for keepalived
+iptables -I INPUT -p vrrp -j ACCEPT
+
 # Enable docker swarm through iptables
 iptables -A INPUT -p tcp --dport 2377 -j ACCEPT  # communication between manager nodes
 iptables -A INPUT -p tcp --dport 7946 -j ACCEPT  # container network discover and node communications
